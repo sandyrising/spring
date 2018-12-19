@@ -10,7 +10,7 @@
         http://www.springframework.org/schema/context 
         http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 	<context:component-scan
-		base-package="com.spring.practice.controllers" />
+		base-package="com.spring.practice" />
 
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -23,8 +23,8 @@
 	</bean>
 
 	<!-- <bean id="dao" class="com.spring.practice.dao.impl.EmployeeDaoImpl"></bean> -->
-	<bean id="dao"
-		class="com.spring.practice.dao.impl.EmployeeDaoJdbcImpl"></bean>
+	<!-- <bean id="dao"
+		class="com.spring.practice.dao.impl.EmployeeDaoJdbcImpl"></bean> -->
 
 	<!-- <bean id="emp1" name="empSingle" class="com.spring.practice.pojo.Employee"> 
 		<constructor-arg value="Rohit Sharma" /> <property name="comp" value="Jda 
@@ -42,7 +42,7 @@
 	<bean class="com.spring.practice.service.EmployeeService"></bean>
 	<bean id="passport" name="pport"
 		class="com.spring.practice.pojo.Passport" scope = "prototype" />
-	<bean id="emp" class="com.spring.practice.pojo.Employee" scope = "prototype">
-	</bean>
+	<!-- <bean id="emp" class="com.spring.practice.pojo.Employee" scope = "prototype">
+	</bean> -->
 
 </beans>

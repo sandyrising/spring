@@ -3,9 +3,12 @@ package com.spring.practice.dao.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.spring.practice.dao.IEmployeeDao;
 import com.spring.practice.pojo.Employee;
 
+@Repository
 public class EmployeeDaoJdbcImpl implements IEmployeeDao {
 
 	public EmployeeDaoJdbcImpl() {

@@ -25,6 +25,9 @@ import com.spring.practice.validation.EmployeeValidation;
 @Controller
 public class EmployeeController {
 
+	public EmployeeController() {
+		System.out.println("employee controller object created!!");
+	}
 	static SessionFactory sf;
 	
 	@Autowired

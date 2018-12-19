@@ -7,9 +7,14 @@ import javax.persistence.SecondaryTable;
 import javax.persistence.Table;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 //@Entity
 //@Table(name="employee")
+@Component
+@Scope
 public class Employee implements User {
 
 	private String name;
