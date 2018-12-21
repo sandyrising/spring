@@ -35,7 +35,7 @@ public class EmployeeService {
 	public String loginEmployee(Model m, String email, String pword) {
 		
 		System.out.println("------------------------------m--ioc testing here---------------------------");
-		System.out.println(e1.getName() + "-" + e1.getCity() + "-" + e1.getComp() + "-" + e1.getSal() + "-" + e1.getPport().getPptId() +"-" + e1.getPport().getIssueCity());
+		/*System.out.println(e1.getName() + "-" + e1.getCity() + "-" + e1.getComp() + "-" + e1.getSal() + "-" + e1.getPport().getPptId() +"-" + e1.getPport().getIssueCity());
 		System.out.println(e2.getName() + "-" + e2.getCity() + "-" + e2.getComp() + "-" + e2.getSal() + "-" + e2.getPport().getPptId() + "-" + e2.getPport().getIssueCity());
 		System.out.println(e3.getName() + "-" + e3.getCity() + "-" + e3.getComp() + "-" + e3.getSal() + "-" + e3.getPport().getPptId() + "-" + e3.getPport().getIssueCity());
 		System.out.println(e4);
@@ -65,7 +65,7 @@ public class EmployeeService {
 		
 		System.out.println(e1.getName() + "-" + e1.getCity() + "-" + e1.getComp() + "-" + e1.getSal() + "-" + e1.getPport().getPptId() +"-" + e1.getPport().getIssueCity());
 		System.out.println(e2.getName() + "-" + e2.getCity() + "-" + e2.getComp() + "-" + e2.getSal() + "-" + e2.getPport().getPptId() + "-" + e2.getPport().getIssueCity());
-		System.out.println(e3.getName() + "-" + e3.getCity() + "-" + e3.getComp() + "-" + e3.getSal() + "-" + e3.getPport().getPptId() + "-" + e3.getPport().getIssueCity());
+		System.out.println(e3.getName() + "-" + e3.getCity() + "-" + e3.getComp() + "-" + e3.getSal() + "-" + e3.getPport().getPptId() + "-" + e3.getPport().getIssueCity());*/
 		System.out.println("-------------------------------ioc testing here---------------------------------");
 		System.out.println("User name is : " + email);
 		System.out.println("Password is : " + pword);

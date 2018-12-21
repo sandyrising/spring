@@ -11,10 +11,8 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-//@Entity
-//@Table(name="employee")
-@Component
-@Scope
+@Entity
+@Table(name="employee")
 public class Employee implements User {
 
 	private String name;
@@ -27,17 +25,17 @@ public class Employee implements User {
 	private String sal;
 	private String comp;
 	
-	@Autowired
-	private Passport pport;
+	/*@Autowired
+	private Passport pport;*/
 	
 	public Employee() {
 		System.out.println("default no arg constructor");
 	}
 	
-	public Employee(Passport p) {
+	/*public Employee(Passport p) {
 		this.pport = p;
 		System.out.println("injected passport object!!");
-	}
+	}*/
 	
 	public Employee(String name) {
 		System.out.println("Name came from constructor injection " + name);
@@ -105,12 +103,12 @@ public class Employee implements User {
 		this.comp = comp;
 	}
 
-	public Passport getPport() {
+	/*public Passport getPport() {
 		return pport;
 	}
 
 	public void setPport(Passport pport) {
 		this.pport = pport;
-	}
+	}*/
 
 }

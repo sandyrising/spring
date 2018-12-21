@@ -164,4 +164,10 @@ public class EmployeeController {
 		session.close();
 		return "details";
 	}
+	
+	@RequestMapping(value="/goToLoginPage")
+	public String gotToLoginPage() {
+		System.out.println("executing gotToLoginPage......");
+		return "login";
+	}
 }

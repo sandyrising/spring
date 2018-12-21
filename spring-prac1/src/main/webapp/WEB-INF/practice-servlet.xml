@@ -22,7 +22,7 @@
 		</property>
 	</bean>
 
-	<!-- <bean id="dao" class="com.spring.practice.dao.impl.EmployeeDaoImpl"></bean> -->
+	<bean id="dao" class="com.spring.practice.dao.impl.EmployeeDaoImpl"></bean>
 	<!-- <bean id="dao"
 		class="com.spring.practice.dao.impl.EmployeeDaoJdbcImpl"></bean> -->
 
@@ -36,8 +36,8 @@
 		<property name="pport" ref="passport"></property> </bean> -->
 	<!-- <bean id="emp" class="com.spring.practice.pojo.Employee" autowire="byName"> 
 		</bean> -->
-	<!-- <bean id="emp" class="com.spring.practice.pojo.Employee" lazy-init="true"> 
-		</bean> -->
+	<bean id="emp" class="com.spring.practice.pojo.Employee" lazy-init="true"> 
+		</bean>
 	<bean class="com.spring.practice.controllers.Test"></bean>
 	<bean class="com.spring.practice.service.EmployeeService"></bean>
 	<bean id="passport" name="pport"

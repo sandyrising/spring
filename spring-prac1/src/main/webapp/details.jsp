@@ -29,6 +29,9 @@ function openInEditView(mail){
 <core:forEach var="emp" items="${empList}">
     ${emp.mail} || ${emp.name} || ${emp.mbl} || ${emp.pwd}</br>
 </core:forEach> --%>
+
+
+<a href='<core:url value="j_spring_security_logout" />' > Logout</a></br>
 <form name="form1" id="form1" action="">
 <table border="2" >
 <tr>
