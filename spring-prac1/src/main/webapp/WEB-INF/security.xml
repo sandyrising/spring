@@ -37,7 +37,7 @@
 		password-parameter="pwd"/>
 		<logout logout-success-url="/goToLoginPage" />
 	</http>
-	<authentication-manager>
+	<!-- <authentication-manager>
 		<authentication-provider>
 			<user-service>
 				<user name="virat" password="anushka" authorities="ROLE_ADMIN" />
@@ -45,6 +45,22 @@
 				<user name="dhoni" password="sakshi" authorities="ROLE_USER" />
 			</user-service>
 		</authentication-provider>
-	</authentication-manager>
+	</authentication-manager> -->
+
+<!-- <authentication-manager>
+	<authentication-provider>
+		<jdbc-user-service data-source-ref="dataSource"
+			users-by-username-query="select mail,pwd,true from practice.employee where mail=?"
+			authorities-by-username-query="select mail,role from employee where mail=?"/>
+	</authentication-provider>
+</authentication-manager> -->
+
+<authentication-manager>
+	<authentication-provider>
+		<jdbc-user-service data-source-ref="connection" 
+		users-by-username-query="select mail, pwd, true from employee where mail=?"
+		authorities-by-username-query="select mail, role from employee where mail=?"/>
+	</authentication-provider>
+</authentication-manager>
 
 </beans:beans>

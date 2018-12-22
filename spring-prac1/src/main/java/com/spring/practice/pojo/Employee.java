@@ -1,19 +1,12 @@
 package com.spring.practice.pojo;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.SecondaryTable;
 import javax.persistence.Table;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
 @Entity
 @Table(name="employee")
-public class Employee implements User {
+public class Employee {
 
 	private String name;
 	private String mbl;
@@ -24,6 +17,7 @@ public class Employee implements User {
 	
 	private String sal;
 	private String comp;
+	private String role="ROLE_USER";
 	
 	/*@Autowired
 	private Passport pport;*/
@@ -103,6 +97,14 @@ public class Employee implements User {
 		this.comp = comp;
 	}
 
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
 	/*public Passport getPport() {
 		return pport;
 	}
@@ -110,5 +112,6 @@ public class Employee implements User {
 	public void setPport(Passport pport) {
 		this.pport = pport;
 	}*/
+	
 
 }
