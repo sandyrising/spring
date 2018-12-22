@@ -167,7 +167,22 @@ public class EmployeeController {
 	
 	@RequestMapping(value="/goToLoginPage")
 	public String gotToLoginPage() {
+		
 		System.out.println("executing gotToLoginPage......");
+		return "login";
+	}
+	
+	@RequestMapping(value="/home")
+	public String goToHome() {
+		
+		System.out.println("executing goToHome page");
+		return "profile";
+	}
+	
+	@RequestMapping(value="/goToFailure")
+	public String goToFail(Model model) {
+		model.addAttribute("message", "Invalid Credentials!! Please try with valid credentials provided in authentication manager");
+		System.out.println("Failure page");
 		return "login";
 	}
 }

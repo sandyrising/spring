@@ -7,13 +7,36 @@
 	http://www.springframework.org/schema/security
 	http://www.springframework.org/schema/security/spring-security-3.2.xsd">
 
-	<http auto-config="true">
+	<!-- <http>
+		<intercept-url pattern="/delete*" access="ROLE_ADMIN" />
+		<intercept-url pattern="/openInEditView"
+			access="ROLE_USER" />
+		<http-basic />
+		<logout logout-success-url="/goToLoginPage" />
+	</http> -->
+
+	<!-- <http>
 		<intercept-url pattern="/delete*" access="ROLE_ADMIN" />
 		<intercept-url pattern="/openInEditView" access="ROLE_USER" />
-		<!-- <form-login/> -->
+		<form-login/>
+		<logout logout-success-url="/goToLoginPage" />
+	</http> -->
+	
+	<!-- <http>
+		<intercept-url pattern="/delete*" access="ROLE_ADMIN" />
+		<intercept-url pattern="/openInEditView" access="ROLE_USER" />
+		<form-login login-page="/goToLoginPage" default-target-url="/home" authentication-failure-url="/goToFailure"
+		username-parameter="mail" password-parameter="pwd" />
+		<logout logout-success-url="/goToLoginPage" />
+	</http> -->
+	<http>
+		<intercept-url pattern="/delete*" access="ROLE_ADMIN" />
+		<intercept-url pattern="/openInEditView" access="ROLE_USER" />
+		<form-login login-page="/goToLoginPage" default-target-url="/home" authentication-failure-url="/goToFailure" 
+		username-parameter="mail"
+		password-parameter="pwd"/>
 		<logout logout-success-url="/goToLoginPage" />
 	</http>
-
 	<authentication-manager>
 		<authentication-provider>
 			<user-service>

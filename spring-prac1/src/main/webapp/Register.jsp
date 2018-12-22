@@ -27,7 +27,7 @@ function registerEmployee() {
 <body>
 <img alt="whats app" src="https://cdn.wccftech.com/wp-content/uploads/2018/04/whatsapp-request-your-info.jpg" width="400" height="200"/>
 <font color="red">${message}</font>
-<form action="registerUser">
+<form action="${pageContext.request.contextPath}/registerUser">
 Name : <input type="text" name="name" value="${emp.name}" /></br>
 Mobile Number : <input type="text" name="mbl" value="${emp.mbl}"/><br>
 Mail Id : <input type="text" name="mail" value="${emp.mail}"/></br>
@@ -36,7 +36,7 @@ Password : <input type="password" name="pwd" value="${emp.pwd}"/></br>
 Salary : <input type="text" name ="sal" value="${emp.sal}"/></br>
 Company : <input type="text" name="comp" value="${emp.comp}"/></br>
 <input type="button" value="Register" onclick="registerUser()" ></br>
-<a href="login.jsp">Click Here</a> to login
+<a href="${pageContext.request.contextPath}/goToLoginPage">Click Here</a> to login
 </form>
 </body>
 </html>
