@@ -32,6 +32,7 @@ function openInEditView(mail){
 
 
 <a href='<core:url value="j_spring_security_logout" />' > Logout</a></br>
+<font color="#290FAE">${errorMsg}</font>
 <form name="form1" id="form1" action="">
 <table border="2" >
 <tr>

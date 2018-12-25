@@ -39,4 +39,13 @@ public class EmployeeDaoImpl implements IEmployeeDao {
 		System.out.println("exist from loginEmployee method from EmployeeDaoImpl");
 		return list;
 	}
+
+	/**
+	 * This method returns an employee object based on userName
+	 */
+	public Employee getEmployeeByUserName(String userName) {
+		Session session = sf.openSession();
+		Employee emp = (Employee) session.get(Employee.class, userName);
+		return emp;
+	}
 }

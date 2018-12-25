@@ -25,4 +25,8 @@ public class EmployeeDaoJdbcImpl implements IEmployeeDao {
 		System.out.println("exit from login from EmployeeDaoJdbcImpl");
 		return new ArrayList<Employee>();
 	}
+	public Employee getEmployeeByUserName(String userName) {
+		System.out.println("TODO in JDBC!!");
+		return null;
+	}
 }

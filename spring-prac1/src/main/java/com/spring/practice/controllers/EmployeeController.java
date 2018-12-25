@@ -1,5 +1,6 @@
 package com.spring.practice.controllers;
 
+import java.security.Principal;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -9,6 +10,7 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.core.userdetails.memory.UserAttribute;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -108,9 +110,21 @@ public class EmployeeController {
 	}
 
 	@RequestMapping(value = "/deleteUser", method = RequestMethod.POST)
-	public String deleteEmployee(Model model, @RequestParam("mailId") String email) {
+	public String deleteEmployee(Principal prince, Model model, @RequestParam("mailId") String email) {
 		System.out.println("Entered into deleteEmployee method :: EmployeeController");
 		System.out.println(email);
+		String loggedInUserName = prince.getName();
+		if(loggedInUserName.equals(email)) {
+			model.addAttribute("errorMsg", "You can't delete your self!!");
+			
+			Session session = sf.openSession();
+			Query fetchQuery = session.createQuery("from Employee");
+
+			List<Employee> list = fetchQuery.list();
+			model.addAttribute("empList", list);
+			
+			return "details";
+		}
 		// database to delete record
 		Session session = sf.openSession();
 		Query query = session.createQuery("delete from Employee where mail=?");
@@ -173,10 +187,12 @@ public class EmployeeController {
 	}
 	
 	@RequestMapping(value="/home")
-	public String goToHome() {
-		
+	public String goToHome(Principal prince) {
+		String userName = prince.getName();
+		System.out.println("Logged in user is : " + userName);
 		System.out.println("executing goToHome page");
-		return "profile";
+		String result = empService.goToHome(userName);
+		return result;//profile_admin,profile
 	}
 	
 	@RequestMapping(value="/goToFailure")

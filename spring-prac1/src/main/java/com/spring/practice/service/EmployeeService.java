@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 
+import com.spring.practice.constants.EmployeeConstants;
 import com.spring.practice.dao.IEmployeeDao;
 import com.spring.practice.pojo.Employee;
 import com.spring.practice.validation.EmployeeValidation;
@@ -90,8 +91,21 @@ public class EmployeeService {
 		} else {
 			System.out.println("Entered valid credentials!!");
 			m.addAttribute("userName", list.get(0).getName());
-			return "profile";
+//			return EmployeeConstants.PROFILE_JSP_NAME;
+			return "profile_user";
 		}
 		// database logic ends here!!
+	}
+
+	public String goToHome(String userName) {
+		Employee emp = empDao.getEmployeeByUserName(userName);
+		String role = emp.getRole();
+		
+		if(role.equals("ADMIN")) {
+			return "profile_admin";
+		} else {
+//			return EmployeeConstants.PROFILE_JSP_NAME;
+			return "profile_user";
+		}
 	}
 }

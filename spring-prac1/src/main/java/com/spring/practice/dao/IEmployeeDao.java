@@ -9,4 +9,6 @@ public interface IEmployeeDao {
 	public void registerEmployee(Employee e);
 
 	public List<Employee> loginEmployee(String mail, String password);
+	
+	public Employee getEmployeeByUserName(String userName);
 }

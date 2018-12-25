@@ -9,6 +9,7 @@
 <body>
 
 Helo!! <font color="blue"><i><b> ${userName} </b></i></font>
+You are administrator!!
 <form action="getAllEmployees">
 <input type="submit" value="Show All"/>
 </form>
