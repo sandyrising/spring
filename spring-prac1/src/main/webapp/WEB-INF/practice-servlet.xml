@@ -55,4 +55,13 @@
 		<property name="username" value="root" />
 		<property name="password" value="rising" />
 	</bean>
+	
+	<bean id="roleVoter" class="org.springframework.security.access.vote.RoleVoter">
+		<property name="rolePrefix" value=""></property>
+	</bean>
+
+	<bean id="accessDecisionManager"
+		class="org.springframework.security.access.vote.AffirmativeBased">
+		<constructor-arg name="decisionVoters" ref="roleVoter" />
+	</bean>
 </beans>

@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 @Entity
 @Table(name="employee")
 public class Employee {
@@ -17,9 +19,9 @@ public class Employee {
 	
 	private String sal;
 	private String comp;
-	private String role="ROLE_USER";
+	private String role="USER";
 	
-	/*@Autowired
+/*	@Autowired
 	private Passport pport;*/
 	
 	public Employee() {

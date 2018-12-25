@@ -29,9 +29,10 @@
 		username-parameter="mail" password-parameter="pwd" />
 		<logout logout-success-url="/goToLoginPage" />
 	</http> -->
-	<http>
-		<intercept-url pattern="/delete*" access="ROLE_ADMIN" />
-		<intercept-url pattern="/openInEditView" access="ROLE_USER" />
+	<http access-decision-manager-ref="accessDecisionManager" >
+		<access-denied-handler error-page="/accessDenied"/>
+		<intercept-url pattern="/delete*" access="ADMIN" />
+		<intercept-url pattern="/openInEditView" access="ADMIN,USER" />
 		<form-login login-page="/goToLoginPage" default-target-url="/home" authentication-failure-url="/goToFailure" 
 		username-parameter="mail"
 		password-parameter="pwd"/>
