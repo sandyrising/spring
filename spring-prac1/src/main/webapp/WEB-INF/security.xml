@@ -8,60 +8,67 @@
 	http://www.springframework.org/schema/security/spring-security-3.2.xsd">
 
 	<!-- <http>
-		<intercept-url pattern="/delete*" access="ROLE_ADMIN" />
-		<intercept-url pattern="/openInEditView"
-			access="ROLE_USER" />
-		<http-basic />
-		<logout logout-success-url="/goToLoginPage" />
-	</http> -->
+	<intercept-url pattern="/delete*" access="ROLE_ADMIN" />
+	<intercept-url pattern="/openInEditView"
+		access="ROLE_USER" />
+	<http-basic />
+	<logout logout-success-url="/goToLoginPage" />
+</http> -->
 
 	<!-- <http>
-		<intercept-url pattern="/delete*" access="ROLE_ADMIN" />
-		<intercept-url pattern="/openInEditView" access="ROLE_USER" />
-		<form-login/>
-		<logout logout-success-url="/goToLoginPage" />
-	</http> -->
-	
+	<intercept-url pattern="/delete*" access="ROLE_ADMIN" />
+	<intercept-url pattern="/openInEditView"
+		access="ROLE_USER" />
+	<form-login />
+	<logout logout-success-url="/goToLoginPage" />
+</http> -->
+
 	<!-- <http>
-		<intercept-url pattern="/delete*" access="ROLE_ADMIN" />
-		<intercept-url pattern="/openInEditView" access="ROLE_USER" />
-		<form-login login-page="/goToLoginPage" default-target-url="/home" authentication-failure-url="/goToFailure"
+	<intercept-url pattern="/delete*" access="ROLE_ADMIN" />
+	<intercept-url pattern="/openInEditView"
+		access="ROLE_USER" />
+	<form-login login-page="/goToLoginPage"
+		default-target-url="/home" authentication-failure-url="/goToFailure"
 		username-parameter="mail" password-parameter="pwd" />
-		<logout logout-success-url="/goToLoginPage" />
-	</http> -->
-	<http access-decision-manager-ref="accessDecisionManager" >
-		<access-denied-handler error-page="/accessDenied"/>
+	<logout logout-success-url="/goToLoginPage" />
+</http> -->
+	<http access-decision-manager-ref="accessDecisionManager">
+		<access-denied-handler
+			error-page="/accessDenied" />
 		<intercept-url pattern="/delete*" access="ADMIN" />
-		<intercept-url pattern="/openInEditView" access="ADMIN,USER" />
-		<form-login login-page="/goToLoginPage" default-target-url="/home" authentication-failure-url="/goToFailure" 
-		username-parameter="mail"
-		password-parameter="pwd"/>
+		<intercept-url pattern="/openInEditView"
+			access="ADMIN,USER" />
+		<form-login login-page="/goToLoginPage"
+			default-target-url="/home" authentication-failure-url="/goToFailure"
+			username-parameter="mail" password-parameter="pwd" />
 		<logout logout-success-url="/goToLoginPage" />
 	</http>
 	<!-- <authentication-manager>
-		<authentication-provider>
-			<user-service>
-				<user name="virat" password="anushka" authorities="ROLE_ADMIN" />
-				<user name="rohit" password="rakshitha" authorities="ROLE_USER" />
-				<user name="dhoni" password="sakshi" authorities="ROLE_USER" />
-			</user-service>
-		</authentication-provider>
-	</authentication-manager> -->
-
-<!-- <authentication-manager>
 	<authentication-provider>
-		<jdbc-user-service data-source-ref="dataSource"
-			users-by-username-query="select mail,pwd,true from practice.employee where mail=?"
-			authorities-by-username-query="select mail,role from employee where mail=?"/>
+		<user-service>
+			<user name="virat" password="anushka" authorities="ROLE_ADMIN" />
+			<user name="rohit" password="rakshitha" authorities="ROLE_USER" />
+			<user name="dhoni" password="sakshi" authorities="ROLE_USER" />
+		</user-service>
 	</authentication-provider>
 </authentication-manager> -->
 
-<authentication-manager>
+	<!-- <authentication-manager>
 	<authentication-provider>
-		<jdbc-user-service data-source-ref="connection" 
-		users-by-username-query="select mail, pwd, true from employee where mail=?"
-		authorities-by-username-query="select mail, role from employee where mail=?"/>
+		<jdbc-user-service data-source-ref="dataSource"
+			users-by-username-query="select mail,pwd,true 
+		from practice.employee where mail=?"
+			authorities-by-username-query="select 
+		mail,role from employee where mail=?" />
 	</authentication-provider>
-</authentication-manager>
+</authentication-manager> -->
+
+	<authentication-manager>
+		<authentication-provider>
+			<jdbc-user-service data-source-ref="connection"
+				users-by-username-query="select mail, pwd, true from employee where mail=?"
+				authorities-by-username-query="select mail, role from employee where mail=?" />
+		</authentication-provider>
+	</authentication-manager>
 
 </beans:beans>
