@@ -25,7 +25,7 @@ public class Employee {
 	private Passport pport;*/
 	
 	public Employee() {
-		System.out.println("default no arg constructor");
+		System.out.println("default no arg constructor from employee");
 	}
 	
 	/*public Employee(Passport p) {

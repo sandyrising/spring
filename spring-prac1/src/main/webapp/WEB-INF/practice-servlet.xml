@@ -22,6 +22,9 @@
 		</property>
 	</bean>
 
+	<bean id="p" class="com.spring.practice.pojo.Person" init-method="populateCities" destroy-method="cleanUpObjects">
+	<property name="college" value="Aurora"></property>
+	</bean>
 	<bean id="dao"
 		class="com.spring.practice.dao.impl.EmployeeDaoImpl"></bean>
 	<!-- <bean id="dao" class="com.spring.practice.dao.impl.EmployeeDaoJdbcImpl"></bean> -->
@@ -36,8 +39,7 @@
 		<property name="pport" ref="passport"></property> </bean> -->
 	<!-- <bean id="emp" class="com.spring.practice.pojo.Employee" autowire="byName"> 
 		</bean> -->
-	<bean id="emp" class="com.spring.practice.pojo.Employee"
-		lazy-init="true">
+	<bean id="emp" class="com.spring.practice.pojo.Employee">
 	</bean>
 	<bean class="com.spring.practice.controllers.Test"></bean>
 	<bean class="com.spring.practice.service.EmployeeService"></bean>
@@ -51,12 +53,14 @@
 
 		<property name="driverClassName"
 			value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/practice" />
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/practice" />
 		<property name="username" value="root" />
-		<property name="password" value="rising" />
+		<property name="password" value="Sree.6168" />
 	</bean>
-	
-	<bean id="roleVoter" class="org.springframework.security.access.vote.RoleVoter">
+
+	<bean id="roleVoter"
+		class="org.springframework.security.access.vote.RoleVoter">
 		<property name="rolePrefix" value=""></property>
 	</bean>
 

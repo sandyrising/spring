@@ -18,8 +18,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.spring.practice.dao.IEmployeeDao;
+import com.spring.practice.dao.impl.EmployeeDaoImpl;
 import com.spring.practice.pojo.Employee;
 import com.spring.practice.pojo.Passport;
+import com.spring.practice.pojo.Person;
 import com.spring.practice.pojo.User;
 import com.spring.practice.service.EmployeeService;
 import com.spring.practice.validation.EmployeeValidation;
@@ -35,16 +37,18 @@ public class EmployeeController {
 	@Autowired
 	Employee e1;
 //	EmployeeDaoImpl empDao = new EmployeeDaoImpl();
-	@Autowired
-	IEmployeeDao empDao;
+	/*@Autowired
+	IEmployeeDao empDao;*/
 
 	@Autowired
 	EmployeeService empService;
-	static {
+	/*static {
 		Configuration cfg = new Configuration().configure("hibernate.cfg.xml");
 		sf = cfg.buildSessionFactory();
-	}
+	}*/
 
+	@Autowired
+	private Person person;
 	@RequestMapping(value = "/loginUser")
 	public String loginEmployee(Model m, @RequestParam("mail") String email, @RequestParam("pwd") String pword) {
 
@@ -54,6 +58,16 @@ public class EmployeeController {
 	@RequestMapping(value = "/registerUser", method = RequestMethod.POST)
 	public String registerEmployee(Model model, Employee employee) {
 
+		System.out.println("----------------------------------------------");
+		System.out.println(person.getCollege());
+		
+		/*for (String city : person.getCities()) {
+			System.out.println(city);
+		}*/
+		
+		person.getCities().forEach(System.out::println);
+		System.out.println("----------------------------------------------");
+		
 		System.out.println("preparing pojo object");
 
 		//Validation logic starts here
@@ -89,6 +103,7 @@ public class EmployeeController {
 		
 		// Database logic using hibernate mappings
 		try {
+			EmployeeDaoImpl empDao = new EmployeeDaoImpl();
 			empDao.registerEmployee(employee);
 		} catch (ConstraintViolationException e) {
 			model.addAttribute("message", "Already registered with this mail id. Please try with other mail id!!");

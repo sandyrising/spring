@@ -5,8 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 
-import com.spring.practice.constants.EmployeeConstants;
-import com.spring.practice.dao.IEmployeeDao;
+import com.spring.practice.dao.impl.EmployeeDaoImpl;
 import com.spring.practice.pojo.Employee;
 import com.spring.practice.validation.EmployeeValidation;
 
@@ -15,9 +14,9 @@ public class EmployeeService {
 	public EmployeeService() {
 		System.out.println("employee service object created!!");
 	}
-//	EmployeeDaoImpl empDao = new EmployeeDaoImpl();
-	@Autowired
-	IEmployeeDao empDao;
+	EmployeeDaoImpl empDao = new EmployeeDaoImpl();
+	/*@Autowired
+	IEmployeeDao empDao;*/
 	
 	@Autowired
 //	@Qualifier("empSingle")

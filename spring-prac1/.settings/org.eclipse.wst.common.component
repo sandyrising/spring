@@ -4,6 +4,8 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/java/com/spring/practice/pojo/webapp"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/resources"/>
         <property name="context-root" value="spring-prac1"/>
         <property name="java-output-path" value="/spring-prac1/target/classes"/>
     </wb-module>

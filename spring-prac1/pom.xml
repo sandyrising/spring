@@ -11,6 +11,8 @@
 		<spring-ver>3.2.13.RELEASE</spring-ver>
 		<hiber-version>4.3.11.Final</hiber-version>
 		<spring.security.version>3.2.8.RELEASE</spring.security.version>
+		<maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
 	</properties>
 
 	<dependencies>
